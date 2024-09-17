@@ -24,6 +24,10 @@ spring:
           uri: lb://mail-service
           predicates:
             - Path=/api/mail/**
+        - id: authentication-service
+          uri: lb://authentication-service
+          predicates:
+            - Path=/api/auth/**
     config:
       uri: http://localhost:8888
       fail-fast: true
