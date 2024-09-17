@@ -32,3 +32,7 @@ management:
   endpoint:    
     health:
       show-details: ALWAYS
+
+feign:
+  httpclient:
+    enabled: true
