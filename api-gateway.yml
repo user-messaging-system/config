@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 80
 
 spring:
   application:
@@ -15,19 +15,19 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/api/users/**
+            - Path=v1/api/users/**
         - id: message-service
           uri: lb://message-service
           predicates:
-            - Path=/api/messages/**
+            - Path=v1/api/messages/**
         - id: mail-service
           uri: lb://mail-service
           predicates:
-            - Path=/api/mail/**
+            - Path=v1/api/mail/**
         - id: authentication-service
           uri: lb://authentication-service
           predicates:
-            - Path=/api/auth/**
+            - Path=v1/api/auth/**
     config:
       uri: http://localhost:8888
       fail-fast: true
