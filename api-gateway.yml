@@ -46,3 +46,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG
