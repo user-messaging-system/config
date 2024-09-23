@@ -15,19 +15,19 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=v1/api/users/**
+            - Path=/v1/api/users/**
         - id: message-service
           uri: lb://message-service
           predicates:
-            - Path=v1/api/messages/**
+            - Path=/v1/api/messages/**
         - id: mail-service
           uri: lb://mail-service
           predicates:
-            - Path=v1/api/mail/**
+            - Path=/v1/api/mail/**
         - id: authentication-service
           uri: lb://authentication-service
           predicates:
-            - Path=v1/api/auth/**
+            - Path=/v1/api/auth/**
     config:
       uri: http://localhost:8888
       fail-fast: true
