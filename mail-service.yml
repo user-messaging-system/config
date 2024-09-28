@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: mail-service
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      appName: mail-service
+      prefer-ip-address: true
+      ip-address: 127.0.0.1
