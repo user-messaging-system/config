@@ -6,6 +6,11 @@ spring:
     port: 5672
     username: guest
     password: guest
+  amqp:
+    deserialization:
+      whitelist:
+        patterns: 
+          - com.user_messaging_system.message_service.api.input.*
   datasource:
     url: jdbc:mysql://localhost:3306/message-service
     username: message-service
