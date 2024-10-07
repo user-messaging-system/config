@@ -6,6 +6,8 @@ spring:
     name: api-gateway
   main:
     web-application-type: reactive
+  jwt:
+    secret: 05548d6d1cbd0d0f1c43332823ed32943dac7db78257fd7529c627e7e1e6e807
   cloud:
     gateway:
       discovery:
@@ -37,9 +39,7 @@ spring:
         initial-interval: 1000
         max-interval: 2000
         multiplier: 1.1
-    jwt:
-      secret: 05548d6d1cbd0d0f1c43332823ed32943dac7db78257fd7529c627e7e1e6e807
-
+    
 eureka:
   client:
     service-url:
