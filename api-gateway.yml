@@ -14,7 +14,7 @@ spring:
           lower-case-service-id: true
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: lb://user-service
           predicates:
             - Path=/v1/api/users/**
         - id: message-service
@@ -39,6 +39,50 @@ spring:
         multiplier: 1.1
   jwt:
     secret: 05548d6d1cbd0d0f1c43332823ed32943dac7db78257fd7529c627e7e1e6e807
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealtIndicator: true
+        slidingWindowSize: 100
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+      instances:
+        user-service:
+          baseConfig: default
+          waitDurationInOpenState: 5000
+          slidingWindowSize: 50
+          failureRateThreshold: 60
+        message-service:
+          baseConfig: default
+          waitDurationInOpenState: 5000
+          slidingWindowSize: 50
+          failureRateThreshold: 60
+        authentication-service:
+          baseConfig: default
+          waitDurationInOpenState: 5000
+          slidingWindowSize: 50
+          failureRateThreshold: 60
+        mail-service:
+          baseConfig: default
+          waitDurationInOpenState: 5000
+          slidingWindowSize: 50
+          failureRateThreshold: 60
+  retry:
+    instances:
+      user-service:
+        maxAttempts: 3
+        waitDuration: 1000
+      message-service:
+        maxAttempts: 3
+        waitDuration: 1000
+      authentication-service:
+        maxAttempts: 3
+        waitDuration: 1000
+      mail-service:
+        maxAttempts: 3
+        waitDuration: 1000
 
 eureka:
   client:
