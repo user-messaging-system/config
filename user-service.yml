@@ -11,6 +11,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  redis:
+    host: 192.168.3.33
+    port: 6379
 
 server:
   port: 8084
