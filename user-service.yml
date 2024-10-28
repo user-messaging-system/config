@@ -2,7 +2,7 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://192.168.3.33:3306/user-service
+    url: jdbc:mysql://localhost:3306/user-service
     username: user-service
     password: plplpl123
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -11,9 +11,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-  redis:
-    host: 192.168.3.33
-    port: 6379
+  #redis:
+    #host: 192.168.3.33
+    #port: 6379
 
 server:
   port: 8084

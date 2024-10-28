@@ -2,7 +2,7 @@ spring:
   application:
     name: message-service
   datasource:
-    url: jdbc:mysql://192.168.3.33:3307/message-service
+    url: jdbc:mysql://localhost:3307/message-service
     username: message-service
     password: plplpl123
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,7 +12,7 @@ spring:
     hibernate:
       ddl-auto: update
   rabbitmq:
-    host: 192.168.3.33
+    host: localhost 
     port: 5672
     username: guest
     password: guest
