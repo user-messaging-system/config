@@ -11,9 +11,12 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-  #redis:
-    #host: 192.168.3.33
-    #port: 6379
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://zipkin-server:9411
+    enabled: true 
 
 server:
   port: 8084
@@ -35,6 +38,8 @@ management:
   endpoint:    
     health:
       show-details: ALWAYS
+  tracing:
+    enabled: true
 
 feign:
   httpclient:

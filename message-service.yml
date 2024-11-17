@@ -24,6 +24,16 @@ spring:
         deserialization:
           whitelist:
             patterns: "com.user_messaging_system.message_service.api.input.*"
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://zipkin-server:9411
+    enabled: true
+
+management:
+  tracing:
+    enabled: true
 
 server:
   port: 1080
